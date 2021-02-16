@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Remove previous dist directory
 rm -rf dist/
 

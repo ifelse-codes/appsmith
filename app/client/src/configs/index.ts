@@ -124,8 +124,17 @@ const getConfig = (fromENV: string, fromWindow: string) => {
 
 // TODO(Abhinav): See if this is called so many times, that we may need some form of memoization.
 export const getAppsmithConfigs = (): AppsmithUIConfigs => {
-  const { APPSMITH_FEATURE_CONFIGS } = window;
+  let { APPSMITH_FEATURE_CONFIGS } = window;
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
+  console.log(JSON.stringify(APPSMITH_FEATURE_CONFIGS));
+  if(!APPSMITH_FEATURE_CONFIGS) {
+    APPSMITH_FEATURE_CONFIGS = getConfigsFromEnvVars();
+  }
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
   const ENV_CONFIG = getConfigsFromEnvVars();
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
+  console.log(JSON.stringify(ENV_CONFIG));
+  console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
   const getFeatureFlags = (
     optimizelyApiKey: string,
   ): FeatureFlagConfig | undefined => {

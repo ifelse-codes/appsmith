@@ -23,11 +23,11 @@ if ! test -f "$KEY_FILE" || ! test -f "$CERT_FILE"; then
     echo "
     KEY and/or CERTIFICATE not found
     Please install mkcert and generate
-    the key and certificate files
+    the key and certificate files 
     by running the following command
 
     cd docker && mkcert -install && mkcert \"*.appsmith.com\" && cd ..
-
+    
     "
     exit
 fi

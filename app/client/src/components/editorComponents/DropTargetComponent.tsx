@@ -58,7 +58,7 @@ const StyledDropTarget = styled.div`
 const Onboarding = () => {
   return (
     <div style={{ position: "fixed", left: "50%", top: "50vh" }}>
-      <h2 style={{ color: "#ccc" }}>Drag and drop a widget here</h2>
+      <h2 style={{ color: "#ccc" }}>Start Creating...  Add A Widget Here  ... </h2>
     </div>
   );
 };
